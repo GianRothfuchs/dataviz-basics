@@ -13,11 +13,11 @@ Matplotlib Architecture entails three layers:
  2.1 Primitives: Lines, Rectangles, Circles, and Text
  2.2 Composite: Axis, Tick, Axes, and Figure
  The Figure Artist is the toplevel object that contains and manages all elements in a graphic. Each composite Artist may contain other composite artists as wella s primitive artists.
-3. Scripting Layer: pyplot, server as a quick access to the Artist layer
+3. Scripting Layer: pyplot, serves as a quick access to the Artist layer through the matplotlib.pyplot interface
 
 Here are two ways to generate a histogram, first by going through the Artist layer, and second by using the scripting layer.
 
-The code to go directly to the Artist Layer is much longer.
+The code to go directly to the Artist Layer is syntactically heavy, but very flexible in return:
 ~~~
 from matplotlib.backends.backend_agg import FigureCanvas as FigureCanvas 
 from matplotlib.figure import Figure
@@ -40,9 +40,15 @@ ax.set_title('Normal distribution with $\mu=0, \sigma=1$')
 ~~~
 While the code using the Scripting Layer is more neat, but also more restricted.
 ~~~
+import matplotlib.pyplot as plt
+import numpy as np
 
+x = np.random.randn(10000)
+plt.hist(x, 100)
+plt.title('Normal distribution with $\mu=0, \sigma=1$')
+plt.show()
 ~~~
-
+ 
 Both results in:
 
 ![Histogram Example](matplotlib_ArtistLayerExample.png "Histogram")
