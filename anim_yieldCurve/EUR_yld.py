@@ -42,7 +42,7 @@ plt.style.use('seaborn-whitegrid')
 #plt.style.use('dark_background')
 fig = plt.figure()
 
-plt.rcParams["figure.figsize"] = (10,8)
+plt.rcParams["figure.figsize"] = (8,6)
 
 ax = plt.axes(xlim=(1,16), ylim=(-1,6))
 plt.xlabel("Tenor")
@@ -100,4 +100,4 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, 
            frames=N, interval=170, repeat=False ,blit=True)
 
-anim.save('euro_curve_corp_A.gif',writer="pillow")
+anim.save('euro_curve_corp_A_sm.gif',writer="pillow")
