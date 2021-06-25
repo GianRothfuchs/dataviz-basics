@@ -38,7 +38,8 @@ df2.loc[:,df.columns] = df
 
 
 # define plot
-plt.style.use('seaborn-whitegrid')
+#plt.style.use('seaborn-whitegrid')
+plt.style.use('dark_background')
 fig = plt.figure()
 
 
@@ -78,7 +79,7 @@ def animate(i):
         
     # update lines    
     lines[i+offset+1].set_data(x_axis, ser)
-    lines[i+offset+1].set_color("dimgray")
+    lines[i+offset+1].set_color("white")
     # marker add
     lines[i+offset+1].set_marker("o")
     lines[i+offset+1].set_markevery(x_subset)
@@ -100,4 +101,4 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, 
            frames=N, interval=170, repeat=False ,blit=True)
 
-anim.save('euro_curve_corp_A.gif',writer="pillow")
+anim.save('euro_curve_corp_A_gh.gif',writer="pillow")
