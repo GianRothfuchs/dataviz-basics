@@ -42,7 +42,6 @@ plt.style.use('seaborn-whitegrid')
 #plt.style.use('dark_background')
 fig = plt.figure()
 
-
 plt.rcParams["figure.figsize"] = (10,8)
 
 ax = plt.axes(xlim=(1,16), ylim=(-1,6))
